@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { HomeContainer, HomeHeader, Order, ProductDisplay } from "./homeStyle";
 
-export function Home() {
+export function Home(props) {
   return (
     <HomeContainer>
       <HomeHeader>
@@ -16,11 +16,14 @@ export function Home() {
         </Order>
       </HomeHeader>
       <ProductDisplay>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {props.products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            productsCart={props.productsCart}
+            setProductsCart={props.setProductsCart}
+          />
+        ))}
       </ProductDisplay>
     </HomeContainer>
   );

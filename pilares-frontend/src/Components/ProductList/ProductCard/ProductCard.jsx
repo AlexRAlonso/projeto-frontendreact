@@ -1,17 +1,28 @@
 import { useState } from "react";
-import { PorductContainer, PorductImage, PorductDescription, AddButton } from "./productCardStyle";
+import {
+  ProductContainer,
+  ProductImage,
+  ProductDescription,
+  AddButton,
+} from "./productCardStyle";
 
-export function ProductCard() {
+export function ProductCard({ product, productsCart, setProductsCart }) {
+  const handleAddCart = () => {
+    setProductsCart([...productsCart, product]);
+  };
+
   return (
-    <PorductContainer>
-      <PorductImage>
-        <p>Product Card</p>
-      </PorductImage>
-      <PorductDescription>
-        <p>Nome do Produto</p>
-        <p>Valor</p>
-        <AddButton className="AddButton">Adicionar ao Carrinho</AddButton>
-      </PorductDescription>
-    </PorductContainer>
+    <ProductContainer>
+      <ProductImage>
+        <img src={product.imagePath} alt="" />
+      </ProductImage>
+      <ProductDescription>
+        <p>{product.name}</p>
+        <p>Uc${product.value},00</p>
+        <AddButton className="AddButton" onClick={handleAddCart}>
+          Adicionar ao Carrinho
+        </AddButton>
+      </ProductDescription>
+    </ProductContainer>
   );
 }

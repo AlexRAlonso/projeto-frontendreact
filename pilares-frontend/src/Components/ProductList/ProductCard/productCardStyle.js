@@ -1,20 +1,28 @@
 import styled from "styled-components";
 
-export const PorductContainer = styled.section`
-  min-width: 18vw;
+export const ProductContainer = styled.section`
+  width: 360px;
   
 `;
 
-export const PorductImage = styled.section`
+export const ProductImage = styled.section`
   border: solid black 2px;
-  height: 60vh;
+  height: 500px;
+  width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  & > img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
-export const PorductDescription = styled.section`
+export const ProductDescription = styled.section`
   border: solid darkgray 1px;
+  width: 100%;
   height: 15vh;
   padding: 1vw;
   display: flex;

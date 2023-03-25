@@ -8,15 +8,15 @@ export function Filters() {
       <form>
         <div className="filter-section">
           <label>Valor mínimo:</label>
-          <input class="filters-input" type="text"></input>
+          <input className="filters-input" type="text"></input>
         </div>
         <div className="filter-section">
           <label>Valor máximo:</label>
-          <input class="filters-input" type="text"></input>
+          <input className="filters-input" type="text"></input>
         </div>
         <div className="filter-section">
           <label>Busca por nome:</label>
-          <input class="filters-input" type="text"></input>
+          <input className="filters-input" type="text"></input>
         </div>
       </form>
     </FiltersContainer>
